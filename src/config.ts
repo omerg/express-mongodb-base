@@ -6,7 +6,7 @@ export class Config {
     static tokenExpiry: number = 30 * 1000 * 60; //time out about token
 
     //Mongo DB URL
-    static mongoUrl: string = process.env.MONGO_URL || "mongodb://localhost/myapplocaldb";
+    static mongoUrl: string = process.env.MONGO_URL || "mongodb://localhost/express_app_db";
 
     //Environment Specific Variables
     static local: { [key: string]: string; } = {
@@ -14,11 +14,11 @@ export class Config {
     };
 
     static dev: { [key: string]: string; } = {
-        frontEndUrl: "https://dev.boxlin.com",
+        frontEndUrl: "https://dev.myapp.com",
     };
 
     static test: { [key: string]: string; } = {
-        frontEndUrl: "http://test.boxlin.com",
+        frontEndUrl: "http://test.myapp.com",
     };
 
     public static getVariable(name: string): string {

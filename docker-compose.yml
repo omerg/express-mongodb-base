@@ -12,7 +12,7 @@ services:
     container_name: mongoLocalDb
     image: mongo
     volumes:
-      - sample_app_db:/data/db
+      - express_app_db:/data/db
       - config:/data/configdb
     ports:
       - "27017:27017"
