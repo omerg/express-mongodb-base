@@ -18,5 +18,5 @@ services:
       - "27017:27017"
     command: mongod
 volumes:
-  sample_app_db:
+  express_app_db:
   config:
