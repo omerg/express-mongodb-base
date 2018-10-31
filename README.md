@@ -17,6 +17,7 @@ $ docker-compose up
 Or you can simply call Gulp:
 
 ```
+$ npm install
 $ gulp
 ```
 
