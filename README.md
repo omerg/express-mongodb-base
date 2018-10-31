@@ -2,17 +2,21 @@ This is an example project for those who want to bootsrap an API using Express a
 
 # Running the project
 
-You can bootstrap the project right away using Docker:
+Change Directory to project root:
 
 ```
 $ cd ${BASE_DIRECTORY}/express-mongodb-base
+```
+
+You can bootstrap the project right away using Docker:
+
+```
 $ docker-compose up
 ```
 
 Or you can simply call Gulp:
 
 ```
-$ cd ${BASE_DIRECTORY}/express-mongodb-base
 $ gulp
 ```
 
