@@ -22,8 +22,8 @@ Start Using the API at http://localhost:3001/api/
 
 * File Structure
 
-	* The project file structure is defined as below:
-	
+  * The project file structure is defined as below:
+
 	* src/dao for Data Access Objects
 	* src/model for Database Object Model Representations
 	* src/routes/api for API Routes
