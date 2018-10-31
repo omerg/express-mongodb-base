@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+dist
+.idea
+build
+typings
+.DS_Store
+/_mac/
+/build/
+/debugger.xml
+/editor.xml
+/ignore.xml
+/log_highlighting.xml
+/ui.lnf.xml
+/inspection/
+/codestyles/
+/.idea/

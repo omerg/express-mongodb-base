@@ -1,0 +1,36 @@
+{
+  "name": "express-mongodb-base",
+  "version": "0.0.1",
+  "description": "Template Express Server Project with MongoDb, Mongoose and Inversify Configured.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "debug": "node $NODE_DEBUG_OPTION dist/index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "debug": "^4.1.0",
+    "express": "^4.14.0",
+    "express-flash": "^0.0.2",
+    "express-jwt": "^5.3.1",
+    "express-session": "^1.14.2",
+    "express-validator": "^3.1.3",
+    "gulp": "^4.0.0",
+    "gulp-run": "^1.7.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-typescript": "^3.2.3",
+    "inversify": "4.3.0",
+    "jsonwebtoken": "^8.3.0",
+    "jwks-rsa": "^1.2.1",
+    "mongodb": "~2.0",
+    "mongoose": "^4.13.11",
+    "morgan": "^1.9.0",
+    "reflect-metadata": "^0.1.12",
+    "ts-node": "^1.6.1"
+  },
+  "devDependencies": {
+    "typescript": "^2.7.2"
+  }
+}

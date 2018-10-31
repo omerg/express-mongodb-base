@@ -1,0 +1,22 @@
+version: "3"
+services:
+  app:
+    container_name: express_server
+    restart: always
+    build: .
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongo
+  mongo:
+    container_name: mongoLocalDb
+    image: mongo
+    volumes:
+      - sample_app_db:/data/db
+      - config:/data/configdb
+    ports:
+      - "27017:27017"
+    command: mongod
+volumes:
+  sample_app_db:
+  config:
