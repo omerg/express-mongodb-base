@@ -18,6 +18,7 @@ Or you can simply call Gulp:
 
 ```
 $ npm install
+$ npm install -g gulp-cli
 $ gulp
 ```
 
