@@ -28,31 +28,29 @@ Start Using the API at http://localhost:3001/api/
 * File Structure
 
   * The project file structure is defined as below:
-
 	* src/dao for Data Access Objects
 	* src/model for Database Object Model Representations
 	* src/routes/api for API Routes
 	* src/services for Services
+	
+* Express-JWT
+   * Token Based Authorization
 
 * Inversify
-	* Annotation Based Configuration
-	* Inversion of Control
+   * Annotation Based Configuration
+   * Inversion of Control
 
 * Mongoose
-	* ORM Mapping
+	* Object Relational Mapping (ORM) Layer
 	* Model Validation
+	* Data Access Object (DAO) Layer
+	* Create Read Update Delete (CRUD) Operations Abstracted via Super Class
   
 * Gulp 4
   * Task Management
-  * Sourcemap management for debugging
   * Hot Reloading
-	
-* NPM
-	* Dependency Management
-	* Single line of command to clean, test, build and deploy	
-
-* MongoDB
-  * No SQL Database Management
+  * Sourcemaps used for debugging TypeScript code
 	
 * Docker
   * Containerization
+  * Docker Compose used to attach MongoDB Image to application
