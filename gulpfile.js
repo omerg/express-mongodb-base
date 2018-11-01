@@ -16,7 +16,10 @@ gulp.task('scripts', () => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch('src/**/*.ts', gulp.series('scripts'));
+    return new Promise(function(resolve) {
+        gulp.watch('src/**/*.ts', gulp.series('scripts'));
+        resolve();
+    });
 });
 
 gulp.task('assets', () => {
@@ -25,7 +28,10 @@ gulp.task('assets', () => {
 });
 
 gulp.task('start', () => {
-    run('npm run debug').exec();
+    return new Promise(function(resolve) {
+        run('npm run debug').exec();
+        resolve();
+    });
 });
 
 gulp.task('default', gulp.series('scripts', 'assets', gulp.parallel('start', 'watch')));

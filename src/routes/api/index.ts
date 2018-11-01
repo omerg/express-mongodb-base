@@ -4,34 +4,21 @@ import {IUserRouter} from './users/user.router';
 import {inject, injectable} from "inversify";
 import "reflect-metadata";
 import jwt = require('express-jwt');
-import jwks = require('jwks-rsa');
 import {IShopRouter} from './shops/shop.router';
 import {IDbLogRouter} from './dbLogs/dblog.router';
 import {ICategoryRouter} from './category/category.router';
+import {Config} from '../../config';
 
 
 export interface IApi {
     getRouter(): Router;
 }
 
-// export const auth = jwt({
-//     secret: Config.privateKey
-// });
-
-// We are going to implement a JWT middleware that will ensure the validity of our token.
-// We'll require each protected route to have a valid access_token sent in the Authorization header
 export const auth = jwt({
-    secret: jwks.expressJwtSecret({
-        cache: true,
-        rateLimit: true,
-        jwksRequestsPerMinute: 5,
-        jwksUri: "https://lucidcode.eu.auth0.com/.well-known/jwks.json"
-    }),
-    // This is the identifier we set when we created the API
-    audience: 'https://auth.boxlin.com/api/v2/',
-    issuer: "https://lucidcode.eu.auth0.com/", // e.g., you.auth0.com
-    algorithms: ['RS256']
+    secret: Config.privateKey,
+    algorithms: ['HS256']
 });
+
 
 @injectable()
 export class Api implements IApi {
@@ -75,6 +62,5 @@ export class Api implements IApi {
         return router;
 
     }
-
 
 }
