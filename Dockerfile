@@ -5,6 +5,9 @@ WORKDIR /usr/src/app
 
 COPY . .
 
+#install
+RUN npm install
+
 EXPOSE 3001
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "debug" ]
