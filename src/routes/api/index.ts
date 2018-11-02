@@ -42,6 +42,12 @@ export class Api implements IApi {
 
         let router = Router();
 
+        router.use('/', (msg: any, res: any) => {
+            res.send({
+                message: 'I am a server route and can also be hot reloaded!'
+            })
+        });
+
         // split up route handling
         router.use('/items', this.itemRouter.getRouter());
         router.use('/shops', this.shopRouter.getRouter());
