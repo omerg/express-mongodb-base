@@ -1,3 +1,5 @@
+# Express MongoDB Base
+
 This is an example project for those who want to bootsrap an API using Express and MongoDB.
 
 # Pre-reqs
