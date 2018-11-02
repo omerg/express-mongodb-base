@@ -36,16 +36,17 @@ In order to enable debugging in local environment, start project with the follow
 $ npm run debug
 ```
 
-You can place breakpoints in TypeScript code and debug at runtime. For configuration of your favorite IDE, see the documentation for:
+> **Note on editors!** - TypeScript has great support in [every editor](http://www.typescriptlang.org/index.html#download-links) . 
+You can place breakpoints in TypeScript code and debug at runtime. 
+
+For configuration of your favorite IDE, see the documentation for:
  
   * [Debugging in VS Code](https://github.com/Microsoft/vscode-recipes/tree/master/nodemon)
   * [Debugging in IntelliJ](https://www.jetbrains.com/help/idea/run-debug-configuration-node-js-remote-debug.html)
-
-
+  
 # Feature Highlights
 
 * File Structure
-
   * The project file structure is defined as below:
 	* src/dao for Data Access Objects
 	* src/model for Database Object Model Representations
