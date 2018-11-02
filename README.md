@@ -1,25 +1,33 @@
 This is an example project for those who want to bootsrap an API using Express and MongoDB.
 
+# Pre-reqs
+To build and run this app locally you will need a few things:
+- Install [Node.js](https://nodejs.org/en/)
+- Install [MongoDB](https://docs.mongodb.com/manual/installation/)
+
+# Getting started
+- Clone the repository
+```
+git clone --depth=1 https://github.com/Microsoft/TypeScript-Node-Starter.git <project_name>
+```
+- Install dependencies
+```
+cd <project_name>
+npm install
+```
+
 # Running the project
 
-Change Directory to project root:
+You can simply call Npm Script:
 
 ```
-$ cd ${BASE_DIRECTORY}/express-mongodb-base
+$ npm run debug
 ```
 
-You can bootstrap the project right away using Docker:
+Or you can bootstrap the project right away using Docker:
 
 ```
 $ docker-compose up
-```
-
-Or you can simply call Gulp:
-
-```
-$ npm install
-$ npm install -g gulp-cli
-$ gulp
 ```
 
 Start Using the API at http://localhost:3001/api/
@@ -47,10 +55,8 @@ Start Using the API at http://localhost:3001/api/
 	* Data Access Object (DAO) Layer
 	* Create Read Update Delete (CRUD) Operations Abstracted via Super Class
   
-* Gulp 4
-  * Task Management
+* Nodemon
   * Hot Reloading
-  * Sourcemaps used for debugging TypeScript code
 	
 * Docker
   * Containerization

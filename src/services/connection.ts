@@ -1,4 +1,4 @@
-import {MongoClient} from "mongodb";
+const MongoClient = require('mongodb').MongoClient;
 import {injectable} from "inversify";
 import "reflect-metadata";
 import {Config} from "../config";
@@ -25,8 +25,8 @@ export class Connection implements IConnection {
     public open() {
         if (this.dbConnection == null) {
 
-            let client: MongoClient = new MongoClient();
-            client.connect(Connection.url, (err, db) => {
+            // Connect using MongoClient
+            MongoClient.connect(Connection.url, (err, db) => {
                 assert.equal(null, err);
                 console.log("Connected correctly to MongoDB server.");
                 this.dbConnection = db;
