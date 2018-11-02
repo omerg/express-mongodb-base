@@ -17,16 +17,30 @@ npm install
 You can simply call Npm Script:
 
 ```
-$ npm run debug
+$ npm start
 ```
 
-Or you can bootstrap the project right away using Docker:
+Or you can bootstrap the project right away using [Docker](https://www.docker.com/):
 
 ```
 $ docker-compose up
 ```
 
-Start Using the API at http://localhost:3001/api/
+Start Using the API at [http://localhost:3001/api/](http://localhost:3001/api/)
+
+# Debugging the project
+
+In order to enable debugging in local environment, start project with the following command:
+
+```
+$ npm run debug
+```
+
+You can place breakpoints in TypeScript code and debug at runtime. For configuration of your favorite IDE, see the documentation for:
+ 
+  * [Debugging in VS Code](https://github.com/Microsoft/vscode-recipes/tree/master/nodemon)
+  * [Debugging in IntelliJ](https://www.jetbrains.com/help/idea/run-debug-configuration-node-js-remote-debug.html)
+
 
 # Feature Highlights
 
