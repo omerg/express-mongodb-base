@@ -84,3 +84,4 @@ For configuration of your favorite IDE, see the documentation for:
 
 * Travis CI
   * Continuous Integration
+  * Has an extra .gitlab-ci.yml file for Gitlab users!
