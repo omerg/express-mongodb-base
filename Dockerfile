@@ -7,6 +7,7 @@ COPY . .
 
 #install
 RUN npm install
+RUN npm run build-ts
 
 EXPOSE 3001
 
