@@ -1,0 +1,52 @@
+image: docker:git
+services:
+- docker:dind
+
+stages:
+- build
+- release
+- deploy
+
+variables:
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
+  HEROKU_DEPLOY_IMAGE: registry.heroku.com/express-mongodb-base/web
+
+build:
+  stage: build
+  script:
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+  - docker build -t $CONTAINER_TEST_IMAGE .
+  - docker push $CONTAINER_TEST_IMAGE
+
+
+release-to-gitlab:
+  stage: release
+  script:
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+  - docker pull $CONTAINER_TEST_IMAGE
+  - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+  - docker push $CONTAINER_RELEASE_IMAGE
+  only:
+  - master
+
+release-to-heroku:
+  stage: release
+  script:
+  - docker login -u $HEROKU_USERNAME -p $HEROKU_PRODUCTION_API_KEY registry.heroku.com
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+  - docker pull $CONTAINER_TEST_IMAGE
+  - docker tag $CONTAINER_TEST_IMAGE $HEROKU_DEPLOY_IMAGE
+  - docker push $HEROKU_DEPLOY_IMAGE
+  only:
+  - master
+
+deploy-to-heroku:
+  image: node:10.5.0-alpine
+  stage: deploy
+  script:
+  - yarn global add heroku@7.4.11
+  - export HEROKU_API_KEY=$HEROKU_PRODUCTION_API_KEY
+  - heroku container:release web --app express-mongodb-base
+  only:
+  - master
