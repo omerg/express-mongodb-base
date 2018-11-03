@@ -44,7 +44,7 @@ export class Api implements IApi {
 
         router.use('/', (msg: any, res: any) => {
             res.send({
-                message: 'I am a server route and can also be hot reloaded 4!'
+                message: 'I am a server route and can also be hot reloaded!'
             })
         });
 

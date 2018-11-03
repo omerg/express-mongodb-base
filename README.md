@@ -1,5 +1,8 @@
 # Express MongoDB Base
 
+[![Build Status](https://travis-ci.org/omerg/express-mongodb-base.png?branch=master)](https://travis-ci.org/omerg/express-mongodb-base)  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+
+
 This is an example project for those who want to bootsrap an API using Express and MongoDB.
 
 # Demo
