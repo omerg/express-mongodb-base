@@ -49,19 +49,21 @@ export class Api implements IApi {
         router.use('/categories', this.categoryRouter.getRouter());
         router.use('/logs', this.dbLogRouter.getRouter());
 
-        router.use('/', (msg: any, res: any) => {
+        router.use('/', (msg: any, res: any, next) => {
             res.send({
                 message: 'I am a server route and can also be hot reloaded!'
-            })
+            });
+            next();
         });
 
         // error handlers
         // Catch unauthorised errors
-        router.use((err: any, req, res: any) => {
+        router.use((err: any, req, res: any, next) => {
             if (err.name === 'UnauthorizedError') {
                 res.status(401);
                 res.json({"message": err.name + ": " + err.message});
             }
+            next();
         });
 
         return router;

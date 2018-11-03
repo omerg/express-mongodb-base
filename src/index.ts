@@ -2,11 +2,12 @@ import * as http from 'http';
 import * as debug from 'debug';
 
 import App from './app';
+import {Config} from './config';
 
 
 debug('ts-app:server');
 
-const port = normalizePort(process.env.PORT || 3001);
+const port = normalizePort(Config.portNumber);
 App.set('port', port);
 
 const server = http.createServer(App);

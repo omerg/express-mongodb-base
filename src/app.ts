@@ -104,18 +104,12 @@ class App {
 
         // ROUTES FOR OUR API
         // =============================================================================
-        let router = express.Router();
 
         // middleware to use for all requests
-        router.use(function (req, res, next) {
+        this.app.use(function (req, res, next) {
             // do logging
             console.log('Something is happening.');
             next(); // make sure we go to the next routes and don't stop here
-        });
-
-        // test route to make sure everything is working (accessed at GET http://localhost:3001/api)
-        router.get('/', function (req, res) {
-            res.json({message: 'hooray! welcome to our api!'});
         });
 
         // REGISTER OUR ROUTES -------------------------------
@@ -124,6 +118,12 @@ class App {
         //Router definition is here
         let apiRouter: IApi = this.container.get("api");
         this.app.use('/api', apiRouter.getRouter());
+
+        // test route to make sure everything is working (accessed at GET http://localhost:3001/api)
+        this.app.use('/', function (req, res) {
+            res.json({message: 'hooray! welcome to our api! please append /api to access functions'});
+        });
+
 
     }
 }
