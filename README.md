@@ -2,6 +2,10 @@
 
 This is an example project for those who want to bootsrap an API using Express and MongoDB.
 
+# Demo
+
+https://express-mongodb-base.herokuapp.com/api
+
 # Pre-reqs
 To build and run this app locally you will need a few things:
 - Install [Node.js](https://nodejs.org/en/)
