@@ -11,7 +11,7 @@ stages:
   - deploy
 
 env:
-  - CONTAINER_TEST_IMAGE=registry.gitlab.com/omerg/express-mongodb-base:$CI_BUILD_REF_NAME
+  - CONTAINER_TEST_IMAGE=registry.heroku.com/express-mongodb-base:$CI_BUILD_REF_NAME
   - CONTAINER_RELEASE_IMAGE=registry.heroku.com/express-mongodb-base/web
 
 # safelist
