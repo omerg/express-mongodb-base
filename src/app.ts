@@ -4,6 +4,7 @@ import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as mongoose from 'mongoose';
 import * as compression from 'compression';
+import * as cors from "cors";
 import {Config} from './config';
 import {Api, IApi} from './routes/api';
 
@@ -64,13 +65,17 @@ class App {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: true}));
 
-        this.app.use(function (req, res, next) {
-            res.setHeader('Access-Control-Allow-Credentials', 'true');
-            res.setHeader('Access-Control-Allow-Origin', Config.getVariable('frontEndUrl'));
-            res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
-            res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
-            next();
-        });
+        //options for cors midddleware
+        const options:cors.CorsOptions = {
+            allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "X-Access-Token"],
+            credentials: true,
+            methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+            origin: "*",
+            preflightContinue: false
+        };
+
+        //use cors middleware
+        this.app.use(cors(options));
 
         //serve images publicly in public/images folder
         this.app.use(express.static(__dirname + '/../public/'));
