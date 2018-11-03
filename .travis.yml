@@ -24,13 +24,11 @@ jobs:
   include:
   - stage: build
     script:
-      - "Building Docker Image"
       - docker login -u $HEROKU_USERNAME -p $HEROKU_PRODUCTION_API_KEY registry.heroku.com
       - docker build -t $CONTAINER_TEST_IMAGE .
       - docker push $CONTAINER_TEST_IMAGE
   - stage: release
     script:
-      - "Releasing to Heroku Container Registry"
       - docker login -u $HEROKU_USERNAME -p $HEROKU_PRODUCTION_API_KEY registry.heroku.com
       - docker pull $CONTAINER_TEST_IMAGE
       - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
@@ -38,7 +36,6 @@ jobs:
   - stage: deploy
     image: node:10.5.0-alpine
     script:
-      - "Deploying to Heroku"
       - yarn global add heroku@7.4.11
       - export HEROKU_API_KEY=$HEROKU_PRODUCTION_API_KEY
       - heroku container:release web --app express-mongodb-base
