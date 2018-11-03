@@ -2,7 +2,7 @@ language: ruby
 
 image: docker:git
 services:
-- docker:dind
+- docker
 
 stages:
 - build
