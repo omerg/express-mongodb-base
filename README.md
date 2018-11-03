@@ -81,3 +81,6 @@ For configuration of your favorite IDE, see the documentation for:
 * Docker
   * Containerization
   * Docker Compose used to attach MongoDB Image to application
+
+* Travis CI
+  * Continuous Integration
