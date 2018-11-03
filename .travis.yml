@@ -11,8 +11,7 @@ stages:
   - deploy
 
 env:
-  - CONTAINER_TEST_IMAGE=registry.heroku.com/express-mongodb-base:$TRAVIS_COMMIT
-  - CONTAINER_RELEASE_IMAGE=registry.heroku.com/express-mongodb-base/web
+  - CONTAINER_TEST_IMAGE=registry.heroku.com/express-mongodb-base:$TRAVIS_COMMIT CONTAINER_RELEASE_IMAGE=registry.heroku.com/express-mongodb-base/web
 
 # safelist
 branches:
