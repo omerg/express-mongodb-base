@@ -5,6 +5,8 @@
 
 This is an example project for those who want to bootsrap an API using Express and MongoDB.
 
+There is a [video](https://www.youtube.com/watch?v=fZmLs-obeRc) in Turkish examining the project: 
+
 # Demo
 
 https://express-mongodb-base.herokuapp.com/api
