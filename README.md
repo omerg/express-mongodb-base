@@ -5,7 +5,7 @@
 
 This is an example project for those who want to bootsrap an API using Express and MongoDB.
 
-There is a [video](https://www.youtube.com/watch?v=fZmLs-obeRc) in Turkish examining the project: 
+There is a [video](https://youtu.be/dp9QF088Zqc) in Turkish examining the project: 
 
 # Demo
 
