@@ -1,22 +1,17 @@
 # Express MongoDB Base
-
 [![Build Status](https://travis-ci.org/omerg/express-mongodb-base.png?branch=master)](https://travis-ci.org/omerg/express-mongodb-base)  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
-
 
 This is an example project for those who want to bootsrap an API using Express and MongoDB.
 
 There is a [video](https://youtu.be/dp9QF088Zqc) in Turkish examining the project: 
 
 # Demo
-
 https://express-mongodb-base.herokuapp.com/api
  
-### Heroku Automatic Deployment
+# Heroku Automatic Deployment
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
   
-  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-  
-  If you forked this repository, you can link it to your heroku app afterwards.
-
+If you forked this repository, you can link it to your heroku app afterwards.
 
 # Pre-reqs
 To build and run this app locally you will need a few things:
@@ -31,23 +26,19 @@ npm install
 ```
 
 # Running the project
-
 You can simply call Npm Script:
 
 ```
 $ npm start
 ```
-
 Or you can bootstrap the project right away using [Docker](https://www.docker.com/):
 
 ```
 $ docker-compose up
 ```
-
 Start Using the API at [http://localhost:3001/api/](http://localhost:3001/api/)
 
 # Debugging the project
-
 In order to enable debugging in local environment, start project with the following command:
 
 ```
