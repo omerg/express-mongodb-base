@@ -13,9 +13,10 @@ https://express-mongodb-base.herokuapp.com/api
  
 ### Heroku Automatic Deployment
   
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
   
-If you forked this repository, you can link it to your heroku app afterwards.
+  If you forked this repository, you can link it to your heroku app afterwards.
+
 
 # Pre-reqs
 To build and run this app locally you will need a few things:
