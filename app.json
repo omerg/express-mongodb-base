@@ -1,0 +1,18 @@
+{
+  "name": "express-mongodb-base",
+  "description": "An example project for those who want to bootsrap an API using Express and MongoDB.",
+  "repository": "https://github.com/omerg/express-mongodb-base",
+  "keywords": ["express", "node", "mongo", "typescript"],
+  "env": {
+    "JWT_SECRET_KEY": {
+      "description": "JWT Encryption Secret Key",
+      "required": true,
+      "value": "DEFAULT_VALUE"
+    },
+    "MONGO_URL": {
+      "description": "URL Address of your MongoDB Database. (Format: mongodb://<dbuser>:<dbpassword>@<projectname>.mlab.com:51223/express-mongodb-base",
+      "required": true,
+      "value": ""
+    }
+  }
+}

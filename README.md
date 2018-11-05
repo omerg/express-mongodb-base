@@ -10,6 +10,13 @@ There is a [video](https://youtu.be/dp9QF088Zqc) in Turkish examining the projec
 # Demo
 
 https://express-mongodb-base.herokuapp.com/api
+ 
+### Heroku Automatic Deployment
+  
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+  
+  If you forked this repository, you can link it to your heroku app afterwards.
+
 
 # Pre-reqs
 To build and run this app locally you will need a few things:
@@ -54,7 +61,7 @@ For configuration of your favorite IDE, see the documentation for:
  
   * [Debugging in VS Code](https://github.com/Microsoft/vscode-recipes/tree/master/nodemon)
   * [Debugging in IntelliJ](https://www.jetbrains.com/help/idea/run-debug-configuration-node-js-remote-debug.html)
-  
+
 # Feature Highlights
 
 * File Structure
