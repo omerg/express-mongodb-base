@@ -10,7 +10,7 @@
   "author": "Omer Gurarslan",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "npm run build-ts && node dist/index.js",
     "debug": "npm run build-ts && npm run watch-debug",
     "serve-debug": "nodemon --inspect dist/index.js",
     "build-ts": "tsc",
