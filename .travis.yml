@@ -11,7 +11,7 @@ stages:
   - deploy
 
 env:
-  - HEROKU_APP_NAME=express-mongodb-base CONTAINER_TEST_IMAGE=registry.heroku.com/$HEROKU_APP_NAME:$TRAVIS_COMMIT
+  - HEROKU_APP_NAME=express-mongodb-base CONTAINER_TEST_IMAGE=registry.heroku.com/$HEROKU_APP_NAME:$TRAVIS_COMMIT CONTAINER_RELEASE_IMAGE=registry.heroku.com/$HEROKU_APP_NAME/web
   
 # safelist
 branches:
@@ -27,8 +27,6 @@ jobs:
       - docker build -t $CONTAINER_TEST_IMAGE .
       - docker push $CONTAINER_TEST_IMAGE
   - stage: release
-    env:
-      - CONTAINER_RELEASE_IMAGE=registry.heroku.com/$HEROKU_APP_NAME/web
     script:
       - docker login -u $HEROKU_USERNAME -p $HEROKU_PRODUCTION_API_KEY registry.heroku.com
       - docker pull $CONTAINER_TEST_IMAGE
