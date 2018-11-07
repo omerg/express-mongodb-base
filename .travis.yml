@@ -11,7 +11,7 @@ stages:
   - deploy
 
 env:
-  - HEROKU_APP_NAME=express-mongodb-base/web CONTAINER_TEST_IMAGE=registry.heroku.com/$HEROKU_APP_NAME:$TRAVIS_COMMIT
+  - HEROKU_APP_NAME=express-mongodb-base CONTAINER_TEST_IMAGE=registry.heroku.com/$HEROKU_APP_NAME:$TRAVIS_COMMIT
   
 # safelist
 branches:
