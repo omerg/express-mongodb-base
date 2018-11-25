@@ -31,7 +31,6 @@ jobs:
     env:
       - DOCKER_COMPOSE_VERSION=1.4.2
     script:
-      - apk add --update python py-pip python-dev && pip install docker-compose # install docker-compose
       - docker-compose -f docker-compose.e2e.yml up --exit-code-from app-e2e
   - stage: release
     script:
