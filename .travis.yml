@@ -28,6 +28,9 @@ jobs:
       - docker build -t $CONTAINER_TEST_IMAGE .
       - docker push $CONTAINER_TEST_IMAGE
   - stage: test
+    before_script:
+      - sleep 15
+      - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
     services: mongodb
     script:
       - docker login -u $HEROKU_USERNAME -p $HEROKU_PRODUCTION_API_KEY registry.heroku.com
