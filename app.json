@@ -10,7 +10,7 @@
       "value": "DEFAULT_VALUE"
     },
     "MONGO_URL": {
-      "description": "URL Address of your MongoDB Database. (Format: mongodb://<dbuser>:<dbpassword>@<projectname>.mlab.com:51223/express-mongodb-base",
+      "description": "Format: mongodb://[username:password@]host1[:port1]",
       "required": true,
       "value": ""
     }
