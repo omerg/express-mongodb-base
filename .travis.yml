@@ -4,7 +4,6 @@ language: ruby
 
 services:
   - docker
-  - mongodb
 
 stages:
   - build
