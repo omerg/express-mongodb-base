@@ -7,6 +7,7 @@ services:
 
 stages:
   - build
+  - test
   - release
   - deploy
 
@@ -26,6 +27,12 @@ jobs:
       - docker login -u $HEROKU_USERNAME -p $HEROKU_PRODUCTION_API_KEY registry.heroku.com
       - docker build -t $CONTAINER_TEST_IMAGE .
       - docker push $CONTAINER_TEST_IMAGE
+  - stage: test
+    services: mongodb
+    script:
+      - docker login -u $HEROKU_USERNAME -p $HEROKU_PRODUCTION_API_KEY registry.heroku.com
+      - docker pull $CONTAINER_TEST_IMAGE
+      - docker run $CONTAINER_TEST_IMAGE npm run test
   - stage: release
     script:
       - docker login -u $HEROKU_USERNAME -p $HEROKU_PRODUCTION_API_KEY registry.heroku.com

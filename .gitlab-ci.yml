@@ -4,6 +4,7 @@ services:
 
 stages:
 - build
+- test
 - release
 - deploy
 
@@ -19,6 +20,11 @@ build:
   - docker build -t $CONTAINER_TEST_IMAGE .
   - docker push $CONTAINER_TEST_IMAGE
 
+test:
+  stage: test
+  script:
+  - apk add --update python py-pip python-dev && pip install docker-compose # install docker-compose
+  - docker-compose -f docker-compose.e2e.yml up --exit-code-from app-e2e
 
 release-to-gitlab:
   stage: release

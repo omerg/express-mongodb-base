@@ -1,0 +1,22 @@
+version: "3"
+services:
+  app-e2e:
+    container_name: express_server
+    build: .
+    command: npm run test
+    ports:
+      - "3001:3001"
+    environment:
+    - MONGO_URL=mongodb://mongodb:27017
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+    volumes:
+      - express_app_db:/data/db
+    ports:
+      - "27017:27017"
+    command: mongod
+volumes:
+  express_app_db:
+  config:
