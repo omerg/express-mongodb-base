@@ -11,8 +11,8 @@ stages:
   - deploy
 
 env:
-  - CONTAINER_TEST_IMAGE=registry.heroku.com/express-mongodb-base:$TRAVIS_COMMIT CONTAINER_RELEASE_IMAGE=registry.heroku.com/express-mongodb-base/web
-
+  - HEROKU_APP_NAME=express-mongodb-base CONTAINER_TEST_IMAGE=registry.heroku.com/$HEROKU_APP_NAME:$TRAVIS_COMMIT CONTAINER_RELEASE_IMAGE=registry.heroku.com/$HEROKU_APP_NAME/web
+  
 # safelist
 branches:
   only:
@@ -37,4 +37,4 @@ jobs:
     script:
       - yarn global add heroku@7.4.11
       - export HEROKU_API_KEY=$HEROKU_PRODUCTION_API_KEY
-      - heroku container:release web --app express-mongodb-base
+      - heroku container:release web --app $HEROKU_APP_NAME
