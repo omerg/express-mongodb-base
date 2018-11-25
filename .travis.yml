@@ -29,10 +29,11 @@ jobs:
       - docker build -t $CONTAINER_TEST_IMAGE .
       - docker push $CONTAINER_TEST_IMAGE
   - stage: test
+    env:
+      - DOCKER_COMPOSE_VERSION=1.4.2
     script:
-      - docker login -u $HEROKU_USERNAME -p $HEROKU_PRODUCTION_API_KEY registry.heroku.com
-      - docker pull $CONTAINER_TEST_IMAGE
-      - docker run $CONTAINER_TEST_IMAGE npm run test
+      - apk add --update python py-pip python-dev && pip install docker-compose # install docker-compose
+      - docker-compose -f docker-compose.e2e.yml up --exit-code-from app-e2e
   - stage: release
     script:
       - docker login -u $HEROKU_USERNAME -p $HEROKU_PRODUCTION_API_KEY registry.heroku.com
