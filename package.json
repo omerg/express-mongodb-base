@@ -25,6 +25,7 @@
     "concurrently": "^4.0.1",
     "cors": "^2.8.4",
     "debug": "^4.1.0",
+    "event-stream": "^4.0.1",
     "express": "^4.14.0",
     "express-flash": "^0.0.2",
     "express-jwt": "^5.3.1",
